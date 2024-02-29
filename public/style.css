@@ -1,0 +1,921 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+   display: none;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #00df72; 
+    border-radius: 10px;
+  }
+
+body {
+    background-color: #fff;
+}
+
+path {
+    fill: #00df72;
+}
+
+path:hover {
+    cursor: pointer;
+}
+
+.signin-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.l-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.orange {
+    color: #00df72;
+}
+
+.signin-container input {
+    height: 40px;
+    width: 370px;
+    padding: 0 10px;
+    outline-color: #00df72;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.signin-container button {
+    background-color: #47ffa6;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    padding: 0 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.signin-container button::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: #63ccfd;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    z-index: -1;
+    transition: all .2s ease;
+}
+
+.signin-container button:hover::after {
+    transform: translateX(0);
+}
+
+.rmvBtn {
+    background-color: rgb(255, 136, 136);
+    height: 25px;
+    padding: 0 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: fixed;
+    background-color: #fff;
+    z-index: 99;
+    box-shadow: 1px 1px 13px rgb(83, 83, 83);
+}
+
+.nav-div1, .user-backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-div1:hover {
+    cursor: pointer;
+}
+
+.nav-links {
+    background-color: transparent;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: all .2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links:hover {
+    background-color: #95ffcc;
+}
+
+.nav-div1 i {
+    color: #00df72;
+    margin-right: 8px;
+}
+
+.user-backdrop img {
+    width: 39px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.homeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 30px;
+    width: 100%;
+}
+
+.homeBtn {
+    width: 200px;
+    height: 40px;
+    background-color: #5dfcaf;
+    border: none;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.homeBtn:hover::before {
+    transform: translateX(0);
+}
+
+.homeBtn::before {
+    content: "";
+    width: 200px;
+    height: 40px;
+    display: block;
+    background-color: #63ccfd;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform:translateX(100%);
+    transition: all 0.5s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 21%;
+    gap: 15px;
+    justify-content: center;
+}
+
+.logo h1 {
+    line-height: 40px;
+    display: inline;
+}
+
+.logo i {
+    font-size: 68px;
+    color: #00df72;
+}
+
+
+.dashboard {
+    padding: 25px 50px;
+    padding-top: 15vh;
+}
+
+.dashboard h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.dashboard h2 {
+    font-size: 30px;
+}
+
+.green {
+    color: #00df72;
+}
+
+.dashboardDiv1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboardDiv1 div{
+    height: 130px;
+    width: 20%;
+    background-color: #a1ffd2;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.dashboardDiv1 div i {
+    color: #00df72;
+    text-align: center;
+    padding: 10px 11px;
+    border-radius: 50%;
+    background-color: #0d171a;
+    margin-right: 30%;
+}
+
+.dashboardDiv1 div h3 {
+    font-size: 40px;
+}
+
+.usersList {
+    position: relative;
+    border: 2px solid #00df72;
+    border-radius: 10px;
+    width: 49%;
+    padding: 20px;
+}
+
+.usersList a {
+    text-decoration: none;
+    color: #00df72;
+    position: absolute;
+    bottom: 5%;
+    right: 6%;
+    cursor: pointer;
+}
+
+.usersList div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.usersList table {
+    border-collapse: collapse;
+}
+
+.usersList span {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.usersList button {
+    background-color: #00df72;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 7px 17px;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.bookList {
+    border: none;
+    width: 49%;
+}
+
+.bargraph {
+    height: 100%;
+}
+
+.data {
+    position: absolute;
+    width: 35px;
+    height: 50%;
+    background-color: rebeccapurple;
+}
+
+.bookList td, .bookList th {
+    padding: 8px 18px;
+}
+
+.usersList button:hover {
+    background-color: white;
+    color: #00df72;
+}
+
+th, td {
+    padding: 10px 30px;
+    text-align: left;
+}
+
+.dashboardDiv2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+td img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+td div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardDiv3 {
+    width: 100%;
+    background-color: #a1ffd2;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px 20px;
+}
+
+.dashboardDiv3 h3 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dashBook {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bookName {
+    font-weight: 600;
+}
+
+.dashBook img{
+    width: 120px;
+    border-radius: 10px;
+}
+
+.bookAuthor {
+    font-size: 13px;
+    color: gray;
+}
+
+.dashShelf {
+    display: flex;
+    gap: 20px;
+}
+
+.members {
+    padding: 0 50px;
+    padding-top: 15vh;
+}
+
+.member-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.member-bottom table {
+    border-collapse: collapse;
+}
+
+.member-bottom table td {
+    border-bottom: none;
+}
+
+.member-bottom tbody tr:hover {
+    background-color: #a1ffd2;
+}
+
+.member-bottom button {
+    background-color: rgb(255, 130, 130);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.member-bottom {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rent-books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.r-book img {
+    width: 100px;
+}
+
+.r-book {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.r-book h3 {
+    font-size: 14px;
+    width: 70%;
+}
+
+.r-book p {
+    font-size: 13px;
+}
+
+.rent-preview {
+    width: 40%;
+}
+
+.rent-preview h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.member-top input {
+    height: 36px;
+    background-color: transparent;
+    border: 1px solid #233a44;
+    border-radius: 20px;
+    width: 300px;
+    padding-left: 20px;
+    margin-right: 20px;
+    color: white;
+    outline: none;
+}
+
+.member-top button {
+    background-color: #00df72;
+    border-radius: 20px;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.member-top i {
+    padding-right: 7px;
+}
+
+.addBooks {
+    padding: 20px 50px;
+    padding-top: 15vh;
+}
+
+.addBooks h1 {
+    text-align: center;
+}
+
+.addBooks-top {
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.addBooks-inputs form {
+    display: flex;
+    width: 100%;
+    gap: 3%;
+    flex-wrap: wrap;
+}
+
+.preview {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-info {
+    width: 57%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.input-info input, .input-info select {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+    padding-left: 20px;
+    outline-color: #00df72;
+}
+
+.input-info textarea {
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+    outline: none;
+    border: 1px solid rgb(184, 184, 184);
+}
+
+.input-info button {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 195, 83);
+    border: none;
+    border-radius: 10px;
+}
+
+.input-info input:first-child {
+    width: 400px;
+}
+
+.input-info input:nth-child(2) {
+    width: 400px;
+}
+
+.input-info input:nth-child(9) {
+    width: 300px;
+}
+
+.input-info input:nth-child(4) {
+    width: 330px;
+}
+
+.input-cover {
+    width: 40%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    border-radius: 10px;
+}
+
+.input-cover input {
+    height: 40px;
+    width: 370px;
+    padding: 0 10px;
+    outline-color: #00df72;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 5px;
+}
+
+.preview img {
+    width: 200px;
+}
+
+.addBooks-btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    gap: 20px;
+}
+
+.addBooks-btns button, .addBooks-btns input{
+    background-color: #47ffa6;
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    padding: 0 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.addBooks-btns button::after, .addBooks-btns input::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: #63ccfd;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    border-radius: 20px;
+    z-index: -1;
+    transition: all .2s ease;
+}
+
+.addBooks-btns button:hover::after, .addBooks-btns input:hover::after {
+    transform: translateX(0);
+}
+
+.checkOut {
+    padding: 0 50px;
+    padding-top: 15vh;
+}
+
+.checkout-filter  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    margin: 25px 0;
+}
+
+.checkout-filter input[type=radio] {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    margin-right: 3px;
+}
+
+.filter input[type=text] {
+    width: 200px;
+    margin-bottom: 10px;
+}
+.filterBtn {
+    height: 40px;
+    padding: 0 30px;
+    background-color: #00df72;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.price {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.filter button {
+    width: 60%;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.checkout-book-list table {
+    border-collapse: collapse;
+}
+
+.checkout-book-list table td {
+    border: none;
+}
+
+.checkout-book-list table tr:hover {
+    background-color: #a1ffd2;
+    border-radius: 10px;
+}
+
+.checkout-book-list table img {
+    width: 30px;
+    margin-right: 5px;
+    border-radius: 0;
+}
+
+.status {
+    background-color: #95ffcc;
+    border-radius: 20px;
+    padding: 2px 10px;
+}
+
+.td {
+    display: flex;
+    align-items: center;
+
+}
+
+.checkout-book-list button {
+    height: 30px;
+    background-color: rgb(255, 152, 152);
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.checkout-book-list button:first-child {
+    background-color: #f1ff71;
+}
+
+.checkout-book-list button:first-child:hover {
+    background-color: #e9fa4d;
+}
+.checkout-book-list button:nth-child(2):hover {
+    background-color: rgb(255, 122, 122);
+}
+
+.addMembers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    padding-top: 15vh;
+}
+
+.addMembers .input-info input:last-child{
+    width: 50%;
+}
+
+.billing {
+    padding: 0 50px;
+    padding-top: 15vh;
+}
+
+.billing-container {
+    display: flex;
+}
+
+.billing-inputs {
+    width: 60%;
+    height: 90vh;
+    padding-top: 10px;
+}
+
+.bill-preview {
+    min-width: 40%;
+    min-height: 90vh;
+    border: 1px solid black;
+    padding: 30px 40px;
+
+}
+
+.member-details {
+    margin-bottom: 25px;
+}
+
+.billing-inputs input {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 5px;
+    outline-color: #00df72;
+    outline-width: 2px;
+    padding-left: 12px;
+    margin-right: 15px;
+}
+
+.billing-inputs select {
+    height: 40px;
+    outline-color: #00df72;
+    border: 1ps solid rgb(184, 184, 184);
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 0 15px;
+    margin-right: 70%;
+    margin-bottom: 20px;
+}
+
+.billing-inputs input[type=date] {
+    margin-left: 10px;
+}
+
+.member-details h3 {
+    padding-bottom: 20px;
+}
+
+.member-details :nth-child(6) {
+    width: 500px;
+    margin-top: 20px;
+}
+
+.member-details input[type=email] {
+    width: 300px;
+}
+
+.detail-btn,.add-book-btn {
+    height: 40px;
+    border: none;
+    margin-right: 15px;
+    padding: 0 25px;
+    border-radius: 5px;
+    background-color: #a1ffd2;
+    cursor: pointer;
+}
+
+.detail-btn:hover  {
+    background-color: #5dfcaf;
+}
+
+.memberID {
+    width: 100%;
+}
+
+.book-details h3 {
+    padding-bottom: 20px;
+}
+
+.add-book-btn {
+    background-color: #84d8ff;
+}
+
+.add-book-btn:hover {
+    background-color: #63ccfd;
+}
+
+.book-list td, .book-list th {
+    padding-left: 0;
+}
+
+.addBtn {
+    height: 40px;
+    background-color: #5dfcaf;
+    border: none;
+    border-radius: 5px;
+    padding: 0 17px;
+    margin: 0 4px;
+    margin-bottom: 20px;
+}
+
+.book-list {
+    margin-top: 20px;
+}
+
+.bill-section-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-section-1-1 h1 {
+    font-size: 3.5rem;
+}
+
+.bill-section-2 {
+    padding-left: 75%;
+    margin-bottom: 20px;
+}
+
+.bill-section-3 thead tr {
+    background-color: #5dfcaf;
+    padding-left: 0;
+}
+
+.bill-section-3 tfoot th {
+    text-align: right;
+}
+
+.bill-section-4 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+.bill-section-4-2 {
+    padding-right: 10px;
+}
+
+.bill-section-4-2 p {
+    border-top: 1px solid black;
+}
+
+.billBtns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.confirmBtn, .printBtn {
+    background-color: #47ffa6;
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    padding: 0 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.confirmBtn::after, .printBtn::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: #63ccfd;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    border-radius: 20px;
+    z-index: -1;
+    transition: all .2s ease;
+}
+
+.confirmBtn:hover::after, .printBtn:hover::after {
+    transform: translateX(0);
+}
